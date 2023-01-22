@@ -1,5 +1,6 @@
 <script>
     import ToDo from '../components/ToDo.svelte';
+    import Graph from '../components/Graph.svelte';
 
     let placeholder = "What do you need to do?";
     let todo_text = "";
@@ -8,6 +9,11 @@
         { id: "0", text: "Learn Svelte", completed: false },
         { id: "1", text: "Finish Lab", completed: false },
     ];
+
+    let todo_count = [];
+    let todo_len = 0;
+    $: todo_len = todos.length;
+    $: todo_count = todo_count.concat(todo_len);
 
     let next_id = 2;
 
@@ -20,6 +26,10 @@
         next_id = next_id + 1;
         todo_text = "";
     }
+
+    function removeTodo(id) {
+		todos = todos.filter((todo) => todo.id !== id);
+	}
 </script>
 
 <main>
@@ -31,10 +41,14 @@
         </form>
 
         {#each todos as todo (todo.id)}
-            <ToDo bind:todo={todo} />
+            <ToDo bind:todo={todo} {removeTodo}/>
         {/each}
 
         <div class="actions" />
+    </section>
+
+    <section class="graph">
+        <Graph bind:todo_count={todo_count}/>
     </section>
 </main>
 
@@ -42,10 +56,10 @@
     @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
 
     :root {
-        --color-bg: #f7f7f7;
+        --color-bg: #ffffff;
         --color-outline: #c2c2c2;
         --color-shadow: hsl(0, 0%, 0%, 0.1);
-        --color-text: #222222;
+        --color-text: #3f4252;
         --color-bg-1: hsla(0, 0%, 0%, 0.2);
         --color-shadow-1: hsl(0, 0%, 96%);
     }
@@ -80,21 +94,32 @@
         width: 100%;
     }
 
+    input {
+        padding-left: 96px;
+        line-height: 72px;
+        font-style: italic;
+        border: none;
+    }
+
+    ::placeholder {
+        color: #9e9e9e;
+    }
+
     h1 {
         font-size: 72px;
         font-weight: 300;
-        line-height: 1.4;
+        line-height: 2;
     }
 
     .todos {
-        width: 500px;
+        width: 600px;
         background-color: var(--color-bg);
         border-radius: 5px;
         border: 1px solid var(--color-outline);
         box-shadow: 0 0 4px var(--color-shadow);
     }
 
-    /* .actions {
+    .actions {
         position: relative;
         display: flex;
         align-items: center;
@@ -111,5 +136,5 @@
             0 9px 1px -3px var(--color-bg-1), 0 16px 0 -6px var(--color-shadow-1),
             0 17px 2px -6px var(--color-bg-1);
         z-index: -1;
-    } */
+    }
 </style>

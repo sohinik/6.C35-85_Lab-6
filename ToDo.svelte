@@ -1,6 +1,5 @@
 <script>
     export let todo;
-    export let removeTodo;
 </script>
 
 <main class="todo">
@@ -10,7 +9,7 @@
             bind:checked={todo.completed}
             id="todo"
             type="checkbox"
-            class="done"
+            class="checkbox-round"
         />
 
         <span class:completed={todo.completed}>
@@ -31,20 +30,15 @@
 </main>
 
 <style>
-    /**
-        Define basic variables for use within component
-    **/
     :root {
-        --x-color: rgb(103, 103, 103);
-        --x-highlight: rgb(108, 38, 38);
-        --checkbox-color: rgb(108, 38, 38);
-        --font-size: 24px;
-        --line-height: calc(var(--font-size) * 3);
+        --x-color: /* changes the color of the remove button, ex rgb(103, 103, 103); */
+        --x-highlight: /* changes the color of the remove button when hovered, ex rgb(108, 38, 38); */
+        --checkbox-color: /* changes the color of the checkbox, ex rgb(108, 38, 38); */
+        --font-size: /* changes the height of the line and general spacing, ex 24px; */
+        --line-height: calc(var(--font-size) * 3); /* dependent on the font-size */
     }
 
-    /**
-        Styles for entire todo component, to make sure everything stays inline
-    **/
+
     .todo {
         border-top: 1px solid var(--color-outline);
         box-shadow: 0 0 4px var(--color-shadow);
@@ -55,10 +49,7 @@
         align-items: center;
     }
 
-    /**
-        Checkbox
-    **/
-    .done {
+    .checkbox-round {
         width: calc(var(--font-size) * 2);
         height: calc(var(--font-size) * 2);
         background-color: white;
@@ -71,7 +62,7 @@
         position: absolute;
         left: var(--font-size);
     }
-    .done:checked {
+    .checkbox-round:checked {
         background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+");
         background-repeat: no-repeat;
         background-size: calc(var(--font-size) * 1) calc(var(--font-size) * 1);
@@ -81,9 +72,6 @@
         background-color: var(--checkbox-color);
     }
 
-    /**
-        Todo text box
-    **/
     input[type="text"] {
         font-family: inherit;
         font-weight: 300;
@@ -103,9 +91,6 @@
         color: var(--x-color);
     }
 
-    /**
-        Remove button
-    **/
     .remove {
         display: none;
         position: absolute;
