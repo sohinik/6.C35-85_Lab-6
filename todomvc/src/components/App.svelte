@@ -50,6 +50,8 @@
     <section class="graph">
         <Graph bind:todo_count={todo_count}/>
     </section>
+
+    <h2 style="margin-top: 15px">todos progress over time</h2>
 </main>
 
 <style>
@@ -109,6 +111,12 @@
         font-size: 72px;
         font-weight: 300;
         line-height: 2;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 1.5;
     }
 
     .todos {
