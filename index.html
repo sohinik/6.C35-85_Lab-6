@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="./favicon.png" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_page.67a48176.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.cd958c29.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.9dd86a8c.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.9771accd.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.1a1d59cc.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/layout.svelte.77e88f2f.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.js.984db11e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.f9175d81.js">
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">
+
+
+<main class="svelte-11kudkw"><h1 class="svelte-11kudkw">todos</h1>
+
+    <section class="todos svelte-11kudkw"><form class="svelte-11kudkw"><input placeholder="What do you need to do?" class="svelte-11kudkw" value=""></form>
+
+        <main class="todo svelte-fbf561"><div class="todo-item svelte-fbf561"><input id="todo" type="checkbox" class="done svelte-fbf561">
+
+        <span><input placeholder="Deleted todo" type="text"  class="svelte-fbf561" value="Learn Svelte"></span>
+
+        <button aria-label="Remove todo" class="remove svelte-fbf561"></button></div>
+</main><main class="todo svelte-fbf561"><div class="todo-item svelte-fbf561"><input id="todo" type="checkbox" class="done svelte-fbf561">
+
+        <span><input placeholder="Deleted todo" type="text"  class="svelte-fbf561" value="Finish Lab"></span>
+
+        <button aria-label="Remove todo" class="remove svelte-fbf561"></button></div>
+</main>
+
+        <div class="actions svelte-11kudkw"></div></section>
+
+    <section class="graph svelte-11kudkw"><svg width="400" height="100" class="svelte-1f7xr3l"><line x1="0" x2="400" y1="100" y2="100" class="svelte-1f7xr3l"></line><g class="x svelte-1f7xr3l" transform="translate(0,120)"><text x="0" class="svelte-1f7xr3l">0</text><text x="100" class="svelte-1f7xr3l">5</text><text x="200" class="svelte-1f7xr3l">10</text><text x="300" class="svelte-1f7xr3l">15</text><text x="400" class="svelte-1f7xr3l">20</text></g><line x1="0" x2="0" y1="-100" y2="100" class="svelte-1f7xr3l"></line><g class="y svelte-1f7xr3l" transform="translate(-10,0)"><text y="100" class="svelte-1f7xr3l">0</text><text y="0" class="svelte-1f7xr3l">1</text><text y="-100" class="svelte-1f7xr3l">2</text></g><polyline style="stroke: #3f4252; stroke-width: 2" points="0,-100 " class="svelte-1f7xr3l"></polyline></svg></section>
+
+    <h2 style="margin-top: 15px" class="svelte-11kudkw">todos progress over time</h2>
+</main>
+
+
+			
+			<script>
+				{
+					__sveltekit_p333is = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.cd958c29.js"),
+						import("./_app/immutable/entry/app.1a1d59cc.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+</body>
+
+</html>
+
+<style>
+	html {
+		background-color: #f8f7f6;
+	}
+
+	/* body {
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+	} */
+</style>
